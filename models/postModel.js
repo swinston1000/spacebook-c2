@@ -6,12 +6,17 @@ var mongoose = require('mongoose');
 //you don't need a comments collection
 //you only need a posts collection
 
-var commentSchema = new mongoose.Schema({
+var Schema = mongoose.Schema;
+
+var commentSchema = new Schema({
+  text: String,
+  user: String
 
 });
 
-
-var postSchema = new mongoose.Schema({
+var postSchema = new Schema({
+  text: String,
+  comments: [commentSchema]
 
 });
 
